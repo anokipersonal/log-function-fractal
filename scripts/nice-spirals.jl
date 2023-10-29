@@ -60,7 +60,7 @@ function setup(; resolutionpixel::Tuple{Int64, Int64}, size::Float64, linesquant
     # Add an axis.
     axis = Axis(
         figurecanvas[1, 1],
-        title="Logarithmic Spiral",
+        title="Logarithmic Spiral Art",
         xlabel="X Label",
         ylabel="Y Label"
     )
