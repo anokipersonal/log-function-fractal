@@ -1,5 +1,18 @@
+```
+
+    ./scripts/simple-visualization.jl
+
+    Licensed in MIT License.
+
+    This piece of code will generate 2 lines, one is an exponential function, and the other is
+    a logarithmic function. This code is written to demonstrate the difference between an
+    exponential function and a logarithmic function.
+
+```
+
 using GLMakie
 
+# Logarithmic function.
 function logfunc(axis, figurecanvas)
 
     xcoordinate = range(0.01, stop=10, length=100)
@@ -9,6 +22,7 @@ function logfunc(axis, figurecanvas)
 
 end
 
+# Exponential function.
 function expfunc(axis, figurecanvas)
 
     xcoordinate = range(-10, stop=3, length=100)
@@ -18,6 +32,7 @@ function expfunc(axis, figurecanvas)
 
 end
 
+# Main function.
 function main(resolutionsize)
 
     # Initialize a canvas figure with the size of 800x600.
@@ -35,6 +50,7 @@ function main(resolutionsize)
     logf = logfunc(axis, figurecanvas)
     expf =  expfunc(axis, figurecanvas)
 
+    # Add a legend.
     Legend(
         figurecanvas[1, 2],
         [expf, logf],

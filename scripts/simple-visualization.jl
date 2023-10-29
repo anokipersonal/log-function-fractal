@@ -1,3 +1,13 @@
+```
+
+    ./scripts/simple-visualization.jl
+
+    Licensed in MIT License.
+
+    This piece of code will generate a logarithmic function.
+
+```
+
 using GLMakie
 
 function baseten(axis, figurecanvas)

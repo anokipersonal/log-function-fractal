@@ -1,11 +1,24 @@
+```
+
+    ./scripts/simple-visualization.jl
+
+    Licensed in MIT License.
+
+    This piece of code will generate a logarithmic spiral. An Archimedes spiral with a twist.
+    The distances between each turns are exponential, meaning the distances will increase in 
+    exponentially.
+
+```
+
 using GLMakie
 
+# Plotting function.
 function plotgraph(; axis::Axis, figurecanvas::Figure, points::Bool, guides::Bool)
 
     spiralpoints = 1000    # Define the number of points.
-    scalefactor = 0.2      # Size of the spiral.
+    scalefactor = 10      # Size of the spiral.
     angularfrequency = 0.2 # Angular frequency (rotational)
-    rotationalturns = 10    # Spiral turns.
+    rotationalturns = 10   # Spiral turns.
 
     # Make sure invalid numbers wouldn't pass.
     if spiralpoints ≤ 1
@@ -43,6 +56,7 @@ function plotgraph(; axis::Axis, figurecanvas::Figure, points::Bool, guides::Boo
 
 end
 
+# Main function.
 function main(; resolutionsize::Tuple{Int64, Int64}, points::Bool, guides::Bool)
 
     # Initialize a canvas figure with the size of 800x600.
@@ -60,7 +74,6 @@ function main(; resolutionsize::Tuple{Int64, Int64}, points::Bool, guides::Bool)
     plotgraph(
         axis=axis,
         figurecanvas=figurecanvas,
-        start=start,
         points=points,
         guides=guides
     )
